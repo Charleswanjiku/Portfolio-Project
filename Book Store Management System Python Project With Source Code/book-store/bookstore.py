@@ -1,7 +1,10 @@
+# tkinter imports all the functions and methods for inbuilt functions
 from tkinter import *
 import backend
-window = Tk()
+#create an instance of tkinter frame
+window = tk()
 
+# Creates cells and columns and returns an empty table
 def get_selected_row(event):
     try:
         global select_tup
@@ -18,28 +21,29 @@ def get_selected_row(event):
     except IndexError:
         pass
 
-
+# allows to get all list
 def view_command():
     list1.delete(0,END)
     for row in backend.view():
         list1.insert(END, row)
-
+# Search for matching records
 def search_command():
     list1.delete(0,END)
     for row in backend.search(title_text.get(),author_text.get(),year_text.get(), isbn_text.get()):
         list1.insert(END,row)
-
+# Add new record in respective fields
 def add_book():
     backend.insert(title_text.get(),author_text.get(),year_text.get(), isbn_text.get())
     list1.delete(0,END)
     list1.insert(END,(title_text.get(),author_text.get(),year_text.get(), isbn_text.get()))
-
+# Delete selected record
 def delete_book():
     backend.delete(select_tup[0])
-
+# Update saved record in respective fields
 def update_book():
     backend.update(select_tup[0], title_text.get(),author_text.get(),year_text.get(), isbn_text.get())
 
+# Creates field editor
 window.wm_title("Book Store")
 
 l1 = Label(window, text="Title")
@@ -78,6 +82,7 @@ list1.bind("<<ListboxSelect>>", get_selected_row)
 sb1 =Scrollbar(window)
 sb1.grid(row=2, column=2 ,rowspan = 6)
 
+# Creates command buttons
 list1.configure(yscrollcommand=sb1.set)
 sb1.configure(command=list1.yview)
 
