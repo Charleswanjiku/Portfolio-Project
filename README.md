@@ -18,3 +18,7 @@ You just have to type the book information in the text fields and click on the a
 To run this project, you must have installed Python on your PC.
 Using your prefered python IDE just run the bookstore.py OR in 
 bash run python3 bookstore.py
+
+# Final project blog article
+
+https://qkpagel.co/p/www_bookstoreapp_com
