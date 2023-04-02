@@ -22,3 +22,8 @@ bash run python3 bookstore.py
 # Final project blog article
 
 https://qkpagel.co/p/www_bookstoreapp_com
+
+# Screen shot
+ 
+ 
+![2023-03-30](https://user-images.githubusercontent.com/106974948/229365301-fb2e2921-9ba4-4284-9fd3-787b75efdf58.png)
